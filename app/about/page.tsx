@@ -114,17 +114,23 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="outline" className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Email Me
+                <Button variant="outline" className="flex items-center" asChild>
+                  <a href="mailto:pareshraut0527@gmail.com">
+                    <Mail className="w-4 h-4 mr-2" />
+                    Email Me
+                  </a>
                 </Button>
-                <Button variant="outline" className="flex items-center">
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
+                <Button variant="outline" className="flex items-center" asChild>
+                  <a href="https://www.linkedin.com/in/pareshraut76/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </a>
                 </Button>
-                <Button variant="outline" className="flex items-center">
-                  <Twitter className="w-4 h-4 mr-2" />
-                  Twitter
+                <Button variant="outline" className="flex items-center" asChild>
+                  <a href="https://twitter.com/pareshraut" target="_blank" rel="noopener noreferrer">
+                    <Twitter className="w-4 h-4 mr-2" />
+                    Twitter
+                  </a>
                 </Button>
               </div>
             </CardContent>

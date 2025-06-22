@@ -1,49 +1,12 @@
+
 import { Navigation } from "@/components/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { TrendingUp, Zap, Wrench } from "lucide-react"
+import { ExternalLink, Star, GitFork, Wrench } from "lucide-react"
+import { getGitHubRepos } from "@/lib/github"
 
-export default function ExperimentsPage() {
-  const experiments = [
-    {
-      title: "Climate-Tech Pitch Deck Analysis with Claude",
-      description: "Built an automated system to analyze sustainability metrics and market positioning in pitch decks.",
-      tech: ["Claude API", "Python", "PDF Processing"],
-      outcome: "Reduced initial screening time by 60%",
-    },
-    {
-      title: "VC Startup Scoring Agent in LangChain",
-      description: "Created an AI agent that scores startups based on team, market, and traction signals.",
-      tech: ["LangChain", "OpenAI", "Airtable API"],
-      outcome: "Achieved 78% correlation with partner decisions",
-    },
-    {
-      title: "Real-time ESG Monitoring Dashboard",
-      description:
-        "Developed a dashboard that tracks ESG metrics across portfolio companies using web scraping and NLP.",
-      tech: ["React", "Node.js", "Puppeteer", "OpenAI"],
-      outcome: "Automated 90% of manual ESG reporting",
-    },
-    {
-      title: "AI-Powered Market Research Assistant",
-      description: "Built a conversational AI that can research market trends and competitive landscapes on demand.",
-      tech: ["GPT-4", "Perplexity API", "Streamlit"],
-      outcome: "Cut research time from days to hours",
-    },
-    {
-      title: "Carbon Credit Verification Bot",
-      description: "Experimental bot that verifies carbon credit claims using satellite data and machine learning.",
-      tech: ["Python", "Satellite APIs", "TensorFlow"],
-      outcome: "85% accuracy in fraud detection",
-    },
-    {
-      title: "Startup Trend Prediction Model",
-      description:
-        "Machine learning model that predicts emerging startup trends based on patent filings and research papers.",
-      tech: ["scikit-learn", "Patent APIs", "arXiv API"],
-      outcome: "Identified 3 trends 6 months early",
-    },
-  ]
+export default async function ExperimentsPage() {
+  const repos = await getGitHubRepos('pareshraut76') // Replace with your GitHub username
 
   return (
     <div className="min-h-screen bg-background">
@@ -61,40 +24,78 @@ export default function ExperimentsPage() {
           </div>
         </div>
 
-        {/* Experiments Grid */}
+        {/* Repositories Grid */}
         <div className="grid sm:grid-cols-2 gap-6">
-          {experiments.map((experiment, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
+          {repos.map((repo) => (
+            <Card key={repo.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="flex items-center text-lg sm:text-xl">
-                  <Zap className="w-5 h-5 mr-2 text-orange-500" />
-                  {experiment.title}
-                </CardTitle>
-                <CardDescription className="text-sm sm:text-base">{experiment.description}</CardDescription>
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <CardTitle className="flex items-center text-lg sm:text-xl">
+                      <span className="mr-2">{repo.name}</span>
+                      <a 
+                        href={repo.html_url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-orange-500 transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </CardTitle>
+                    <CardDescription className="text-sm sm:text-base mt-2">
+                      {repo.description || "No description available"}
+                    </CardDescription>
+                  </div>
+                </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div>
-                    <h4 className="font-medium text-foreground mb-2">Tech Stack:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {experiment.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="bg-muted text-xs sm:text-sm">
-                          {tech}
-                        </Badge>
-                      ))}
+                  {/* Topics/Tags */}
+                  {repo.topics && repo.topics.length > 0 && (
+                    <div>
+                      <div className="flex flex-wrap gap-2">
+                        {repo.topics.slice(0, 5).map((topic) => (
+                          <Badge key={topic} variant="outline" className="bg-muted text-xs sm:text-sm">
+                            {topic}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="pt-2 border-t">
-                    <div className="flex items-center">
-                      <TrendingUp className="w-4 h-4 text-green-600 mr-2" />
-                      <span className="text-sm font-medium text-green-600">{experiment.outcome}</span>
+                  )}
+                  
+                  {/* Stats */}
+                  <div className="flex items-center justify-between pt-2 border-t">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      {repo.language && (
+                        <span className="flex items-center">
+                          <div className="w-3 h-3 rounded-full bg-blue-500 mr-1"></div>
+                          {repo.language}
+                        </span>
+                      )}
+                      <span className="flex items-center">
+                        <Star className="w-4 h-4 mr-1" />
+                        {repo.stargazers_count}
+                      </span>
+                      <span className="flex items-center">
+                        <GitFork className="w-4 h-4 mr-1" />
+                        {repo.forks_count}
+                      </span>
                     </div>
+                    <span className="text-xs text-muted-foreground">
+                      Updated {new Date(repo.updated_at).toLocaleDateString()}
+                    </span>
                   </div>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {repos.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">No repositories found. Check back soon for new experiments!</p>
+          </div>
+        )}
       </div>
     </div>
   )
