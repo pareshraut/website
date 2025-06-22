@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -72,8 +73,8 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </div>
               </CardContent>
-            </Card>
-          </Link>
+            </Link>
+          </Card>
 
           {/* Market Radar Preview */}
           <Card className="hover:shadow-lg transition-shadow cursor-pointer group">
