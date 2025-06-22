@@ -1,4 +1,3 @@
-
 import { Navigation } from "@/components/navigation"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, ArrowLeft } from "lucide-react"

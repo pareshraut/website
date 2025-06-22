@@ -1,4 +1,3 @@
-
 ---
 title: "Charm Industrial Raises $50M for Carbon Removal"
 type: "Climate Tech"

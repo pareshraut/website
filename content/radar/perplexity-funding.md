@@ -1,4 +1,3 @@
-
 ---
 title: "Perplexity's $74M Series B: What It Means for AI Search"
 type: "Funding Round"

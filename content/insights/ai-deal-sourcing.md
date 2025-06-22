@@ -1,4 +1,3 @@
-
 ---
 title: "5 Ways AI Can Automate VC Deal Sourcing"
 excerpt: "Exploring how machine learning can transform the way VCs discover and evaluate early-stage opportunities."

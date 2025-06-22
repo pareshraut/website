@@ -1,4 +1,3 @@
-
 ---
 title: "Agentic Workflows for Portfolio Monitoring"
 excerpt: "What's possible today with AI agents for tracking portfolio company performance and market dynamics."
@@ -57,14 +56,14 @@ Here's how leading VCs are implementing agentic monitoring:
 
 Agents connect to various data sources:
 
-```
+\`\`\`
 Portfolio Company APIs → 
 Public Market Data → 
 News and Media → AI Agent → Insights Dashboard
 Social Media → 
 Regulatory Filings → 
 Competitor Intelligence → 
-```
+\`\`\`
 
 ### Intelligent Reporting
 
