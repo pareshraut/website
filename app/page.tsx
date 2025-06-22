@@ -54,7 +54,7 @@ export default function HomePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 lg:pb-20">
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {/* Insights Preview */}
-          <Card className="hover:shadow-lg transition-shadow cursor-pointer group" asChild>
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer group">
             <Link href="/insights">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
@@ -72,11 +72,11 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </div>
               </CardContent>
-            </Link>
-          </Card>
+            </Card>
+          </Link>
 
           {/* Market Radar Preview */}
-          <Card className="hover:shadow-lg transition-shadow cursor-pointer group" asChild>
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer group">
             <Link href="/radar">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-4">
@@ -94,11 +94,11 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </div>
               </CardContent>
-            </Link>
-          </Card>
+            </Card>
+          </Link>
 
           {/* Experiments Preview */}
-          <Card className="hover:shadow-lg transition-shadow cursor-pointer group" asChild>
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer group">
             <Link href="/experiments">
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-4">
@@ -116,8 +116,8 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </div>
               </CardContent>
-            </Link>
-          </Card>
+            </Card>
+          </Link>
         </div>
       </div>
 
