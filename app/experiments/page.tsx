@@ -1,12 +1,17 @@
-
-import { Navigation } from "@/components/navigation"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Star, GitFork, Wrench } from "lucide-react"
-import { getGitHubRepos } from "@/lib/github"
+import { Navigation } from "@/components/navigation";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Star, GitFork, Wrench } from "lucide-react";
+import { getGitHubRepos } from "@/lib/github";
 
 export default async function ExperimentsPage() {
-  const repos = await getGitHubRepos('pareshraut76') // Replace with your GitHub username
+  const repos = await getGitHubRepos("pareshraut"); // Replace with your GitHub username
 
   return (
     <div className="min-h-screen bg-background">
@@ -19,8 +24,12 @@ export default async function ExperimentsPage() {
             <Wrench className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-foreground">Tool Demos & Experiments</h1>
-            <p className="text-muted-foreground mt-2">What I'm Building / Testing</p>
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground">
+              Tool Demos & Experiments
+            </h1>
+            <p className="text-muted-foreground mt-2">
+              What I'm Building / Testing
+            </p>
           </div>
         </div>
 
@@ -33,9 +42,9 @@ export default async function ExperimentsPage() {
                   <div className="flex-1">
                     <CardTitle className="flex items-center text-lg sm:text-xl">
                       <span className="mr-2">{repo.name}</span>
-                      <a 
-                        href={repo.html_url} 
-                        target="_blank" 
+                      <a
+                        href={repo.html_url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-orange-500 transition-colors"
                       >
@@ -55,14 +64,18 @@ export default async function ExperimentsPage() {
                     <div>
                       <div className="flex flex-wrap gap-2">
                         {repo.topics.slice(0, 5).map((topic) => (
-                          <Badge key={topic} variant="outline" className="bg-muted text-xs sm:text-sm">
+                          <Badge
+                            key={topic}
+                            variant="outline"
+                            className="bg-muted text-xs sm:text-sm"
+                          >
                             {topic}
                           </Badge>
                         ))}
                       </div>
                     </div>
                   )}
-                  
+
                   {/* Stats */}
                   <div className="flex items-center justify-between pt-2 border-t">
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -93,10 +106,12 @@ export default async function ExperimentsPage() {
 
         {repos.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground">No repositories found. Check back soon for new experiments!</p>
+            <p className="text-muted-foreground">
+              No repositories found. Check back soon for new experiments!
+            </p>
           </div>
         )}
       </div>
     </div>
-  )
+  );
 }
