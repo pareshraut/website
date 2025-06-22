@@ -1,8 +1,9 @@
 import { Navigation } from "@/components/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { TrendingUp, Brain, Code, Leaf, Mail, Linkedin, Twitter } from "lucide-react"
+import { Brain, Code, Leaf, Mail, Linkedin, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function AboutPage() {
   const skills = [
@@ -42,8 +43,14 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <TrendingUp className="w-12 h-12 text-white" />
+          <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 ring-4 ring-green-500/20">
+            <Image
+              src="/paresh-photo.jpg"
+              alt="Paresh Raut"
+              width={96}
+              height={96}
+              className="w-full h-full object-cover"
+            />
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Hi, I'm Paresh</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
