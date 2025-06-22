@@ -31,7 +31,16 @@ export default function InsightsPage() {
               <Card className="hover:shadow-lg transition-shadow cursor-pointer group">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                    <Badge
+                      variant="secondary"
+                      className={`${
+                        post.category === "Deal Sourcing"
+                          ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                          : post.category === "Portfolio Management"
+                            ? "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                            : "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                      }`}
+                    >
                       {post.category}
                     </Badge>
                     <span className="text-sm text-muted-foreground">{post.readTime}</span>
