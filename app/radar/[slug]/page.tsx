@@ -57,8 +57,7 @@ export default function RadarUpdatePage({ params }: Props) {
               {update.date}
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{update.title}</h1>
-          <p className="text-xl text-muted-foreground">{update.insight}</p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">{update.title}</h1>
         </div>
 
         {/* Article Content */}
@@ -68,6 +67,7 @@ export default function RadarUpdatePage({ params }: Props) {
               h1: ({ children }) => <h1 className="text-3xl font-bold text-foreground mb-6 mt-8">{children}</h1>,
               h2: ({ children }) => <h2 className="text-2xl font-semibold text-foreground mb-4 mt-6">{children}</h2>,
               h3: ({ children }) => <h3 className="text-xl font-semibold text-foreground mb-3 mt-5">{children}</h3>,
+              h4: ({ children }) => <h4 className="text-lg font-semibold text-foreground mb-2 mt-4">{children}</h4>,
               p: ({ children }) => <p className="text-foreground mb-4 leading-relaxed">{children}</p>,
               ul: ({ children }) => (
                 <ul className="list-disc list-inside mb-4 space-y-2 text-foreground">{children}</ul>

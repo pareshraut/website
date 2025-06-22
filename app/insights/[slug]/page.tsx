@@ -52,23 +52,41 @@ export default function InsightPostPage({ params }: Props) {
               {post.readTime}
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{post.title}</h1>
-          <p className="text-xl text-muted-foreground">{post.excerpt}</p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">{post.title}</h1>
         </div>
 
         {/* Article Content */}
         <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-ul:text-foreground prose-ol:text-foreground prose-li:text-foreground">
           <ReactMarkdown
             components={{
-              h1: ({ children }) => <h1 className="text-3xl font-bold mb-6 text-foreground">{children}</h1>,
+              h1: ({ children }) => <h1 className="text-3xl font-bold mb-6 mt-8 text-foreground">{children}</h1>,
               h2: ({ children }) => <h2 className="text-2xl font-semibold mb-4 mt-8 text-foreground">{children}</h2>,
               h3: ({ children }) => <h3 className="text-xl font-semibold mb-3 mt-6 text-foreground">{children}</h3>,
+              h4: ({ children }) => <h4 className="text-lg font-semibold mb-2 mt-4 text-foreground">{children}</h4>,
               p: ({ children }) => <p className="mb-4 text-foreground leading-relaxed">{children}</p>,
-              ul: ({ children }) => <ul className="mb-4 ml-6 list-disc text-foreground">{children}</ul>,
-              ol: ({ children }) => <ol className="mb-4 ml-6 list-decimal text-foreground">{children}</ol>,
-              li: ({ children }) => <li className="mb-2 text-foreground">{children}</li>,
+              ul: ({ children }) => <ul className="mb-4 ml-6 list-disc text-foreground space-y-1">{children}</ul>,
+              ol: ({ children }) => <ol className="mb-4 ml-6 list-decimal text-foreground space-y-1">{children}</ol>,
+              li: ({ children }) => <li className="text-foreground leading-relaxed">{children}</li>,
               strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
               em: ({ children }) => <em className="italic text-foreground">{children}</em>,
+              a: ({ href, children }) => (
+                <a
+                  href={href}
+                  className="text-blue-600 hover:text-blue-700 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {children}
+                </a>
+              ),
+              code: ({ children }) => (
+                <code className="bg-muted px-2 py-1 rounded text-sm font-mono text-foreground">{children}</code>
+              ),
+              blockquote: ({ children }) => (
+                <blockquote className="border-l-4 border-blue-500 pl-4 italic text-muted-foreground mb-4">
+                  {children}
+                </blockquote>
+              ),
             }}
           >
             {post.content}
