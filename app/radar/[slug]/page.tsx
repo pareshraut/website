@@ -32,10 +32,7 @@ export default function RadarUpdatePage({ params }: Props) {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Back Link */}
-        <Link 
-          href="/radar" 
-          className="inline-flex items-center text-green-600 hover:text-green-700 mb-8"
-        >
+        <Link href="/radar" className="inline-flex items-center text-green-600 hover:text-green-700 mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Market Radar
         </Link>
@@ -60,17 +57,49 @@ export default function RadarUpdatePage({ params }: Props) {
               {update.date}
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            {update.title}
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            {update.insight}
-          </p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{update.title}</h1>
+          <p className="text-xl text-muted-foreground">{update.insight}</p>
         </div>
 
         {/* Article Content */}
         <div className="prose prose-lg max-w-none dark:prose-invert">
-          <ReactMarkdown>{update.content}</ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              h1: ({ children }) => <h1 className="text-3xl font-bold text-foreground mb-6 mt-8">{children}</h1>,
+              h2: ({ children }) => <h2 className="text-2xl font-semibold text-foreground mb-4 mt-6">{children}</h2>,
+              h3: ({ children }) => <h3 className="text-xl font-semibold text-foreground mb-3 mt-5">{children}</h3>,
+              p: ({ children }) => <p className="text-foreground mb-4 leading-relaxed">{children}</p>,
+              ul: ({ children }) => (
+                <ul className="list-disc list-inside mb-4 space-y-2 text-foreground">{children}</ul>
+              ),
+              ol: ({ children }) => (
+                <ol className="list-decimal list-inside mb-4 space-y-2 text-foreground">{children}</ol>
+              ),
+              li: ({ children }) => <li className="text-foreground leading-relaxed">{children}</li>,
+              a: ({ href, children }) => (
+                <a
+                  href={href}
+                  className="text-green-600 hover:text-green-700 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {children}
+                </a>
+              ),
+              strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
+              em: ({ children }) => <em className="italic text-foreground">{children}</em>,
+              code: ({ children }) => (
+                <code className="bg-muted px-2 py-1 rounded text-sm font-mono text-foreground">{children}</code>
+              ),
+              blockquote: ({ children }) => (
+                <blockquote className="border-l-4 border-green-500 pl-4 italic text-muted-foreground mb-4">
+                  {children}
+                </blockquote>
+              ),
+            }}
+          >
+            {update.content}
+          </ReactMarkdown>
         </div>
       </div>
     </div>
