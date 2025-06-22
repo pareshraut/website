@@ -20,9 +20,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function RadarUpdatePage({ params }: Props) {
-  const { slug } = await params
-  const update = getRadarUpdate(slug)
+export default function RadarUpdatePage({ params }: Props) {
+  const update = getRadarUpdate(params.slug)
 
   if (!update) {
     notFound()

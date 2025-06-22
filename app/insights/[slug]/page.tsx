@@ -20,9 +20,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function InsightPostPage({ params }: Props) {
-  const { slug } = await params
-  const post = getInsightPost(slug)
+export default function InsightPostPage({ params }: Props) {
+  const post = getInsightPost(params.slug)
 
   if (!post) {
     notFound()
