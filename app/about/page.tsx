@@ -1,22 +1,8 @@
-import { Navigation } from "@/components/navigation";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  TrendingUp,
-  Brain,
-  Code,
-  Leaf,
-  Mail,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Navigation } from "@/components/navigation"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { TrendingUp, Brain, Code, Leaf, Mail, Linkedin, Twitter } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
   const skills = [
@@ -26,17 +12,15 @@ export default function AboutPage() {
     "Machine Learning",
     "Data Analysis",
     "Python",
-    "JavaScript",
+    "Generative AI",
     "LangChain",
-    "OpenAI API",
     "Market Research",
-  ];
+  ]
 
   const experience = [
     {
       title: "AI Research & Development",
-      description:
-        "Building AI agents and tools for venture capital applications",
+      description: "Building AI agents and tools for venture capital applications",
       icon: Brain,
     },
     {
@@ -49,7 +33,7 @@ export default function AboutPage() {
       description: "Hands-on development of AI-powered investment tools",
       icon: Code,
     },
-  ];
+  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -61,13 +45,10 @@ export default function AboutPage() {
           <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
             <TrendingUp className="w-12 h-12 text-white" />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            Hi, I'm Paresh
-          </h1>
+          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Hi, I'm Paresh</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            I explore the intersection of AI and climate technology, sharing
-            insights on how these emerging technologies are reshaping venture
-            capital and creating new opportunities for innovation.
+            I explore the intersection of AI and climate technology, sharing insights on how these emerging technologies
+            are reshaping venture capital and creating new opportunities for innovation.
           </p>
         </div>
 
@@ -80,25 +61,21 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent className="text-muted-foreground leading-relaxed">
               <p className="mb-4">
-                In a rapidly evolving tech landscape, staying ahead of AI and
-                climate technology trends isn't just valuable—it's essential.
-                Through TechPulse, I document my journey of discovery,
-                experimentation, and learning in these transformative fields.
+                In a rapidly evolving tech landscape, staying ahead of AI and climate technology trends isn't just
+                valuable—it's essential. Through TechPulse, I document my journey of discovery, experimentation, and
+                learning in these transformative fields.
               </p>
               <p>
-                Whether you're a fellow technologist, investor, or simply
-                curious about the future, I invite you to learn alongside me as
-                we explore breakthrough startups, cutting-edge research, and
-                practical applications that are shaping tomorrow's world.
+                Whether you're a fellow technologist, investor, or simply curious about the future, I invite you to
+                learn alongside me as we explore breakthrough startups, cutting-edge research, and practical
+                applications that are shaping tomorrow's world.
               </p>
             </CardContent>
           </Card>
 
           {/* What I Do */}
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              What I Do
-            </h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">What I Do</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {experience.map((item, index) => (
                 <Card key={index}>
@@ -116,16 +93,10 @@ export default function AboutPage() {
 
           {/* Skills */}
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              Areas of Focus
-            </h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Areas of Focus</h2>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="px-3 py-1 text-sm"
-                >
+                <Badge key={index} variant="secondary" className="px-3 py-1 text-sm">
                   {skill}
                 </Badge>
               ))}
@@ -137,8 +108,7 @@ export default function AboutPage() {
             <CardHeader>
               <CardTitle className="text-2xl">Let's Connect</CardTitle>
               <CardDescription>
-                I'm always interested in discussing AI, climate tech, and
-                emerging trends. Feel free to reach out!
+                I'm always interested in discussing AI, climate tech, and emerging trends. Feel free to reach out!
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -150,21 +120,13 @@ export default function AboutPage() {
                   </a>
                 </Button>
                 <Button variant="outline" className="flex items-center" asChild>
-                  <a
-                    href="https://www.linkedin.com/in/pareshraut76/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://www.linkedin.com/in/pareshraut76/" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="w-4 h-4 mr-2" />
                     LinkedIn
                   </a>
                 </Button>
                 <Button variant="outline" className="flex items-center" asChild>
-                  <a
-                    href="https://twitter.com/pareshraut0527"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://twitter.com/pareshraut0527" target="_blank" rel="noopener noreferrer">
                     <Twitter className="w-4 h-4 mr-2" />
                     Twitter
                   </a>
@@ -175,5 +137,5 @@ export default function AboutPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }
