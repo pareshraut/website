@@ -25,12 +25,12 @@ export default function HomePage() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
             Stay Ahead of{" "}
             <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-              AI & Climate Tech
+              AI & Climate Innovation
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Learn with me about the latest technologies, breakthrough startups, and emerging trends shaping the future
-            of AI and climate innovation.
+            I track the latest in AI tools, agentic systems, and climate-related technologies—spotlighting breakthrough
+            startups, trends, and experiments that shape the future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -61,11 +61,13 @@ export default function HomePage() {
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle className="group-hover:text-blue-600 transition-colors">Insight Blog</CardTitle>
-                <CardDescription>How VCs Can Use AI - Thought Leadership</CardDescription>
+                <CardDescription>
+                  Where AI meets strategy — tools, trends, and tech that move markets.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Deep dives into AI applications for venture capital, from deal sourcing to portfolio monitoring.
+                  Thought leadership at the intersection of AI, systems innovation, and venture workflows — plus essays on tools, trends, and startups shaping the frontier.
                 </p>
                 <div className="flex items-center text-blue-600 group-hover:text-blue-700">
                   <span className="text-sm font-medium">Read insights</span>

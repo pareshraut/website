@@ -50,12 +50,13 @@ export default function AboutPage() {
               width={96}
               height={96}
               className="w-full h-full object-cover"
+              priority
             />
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Hi, I'm Paresh</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            I explore the intersection of AI and climate technology, sharing insights on how these emerging technologies
-            are reshaping venture capital and creating new opportunities for innovation.
+            I explore the frontier of artificial intelligence and climate-focused innovation tracking how these evolving
+            technologies intersect with entrepreneurship, automation, and real-world impact.
           </p>
         </div>
 
@@ -68,14 +69,16 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent className="text-muted-foreground leading-relaxed">
               <p className="mb-4">
-                In a rapidly evolving tech landscape, staying ahead of AI and climate technology trends isn't just
-                valuable—it's essential. Through TechPulse, I document my journey of discovery, experimentation, and
-                learning in these transformative fields.
+                In a rapidly evolving tech landscape, staying current with breakthroughs in AI and climate innovation is
+                more than curiosity it's a competitive edge.
+              </p>
+              <p className="mb-4">
+                Through TechPulse, I document and share what I'm learning about transformative tools, agentic AI,
+                sustainability tech, and emerging startups.
               </p>
               <p>
-                Whether you're a fellow technologist, investor, or simply curious about the future, I invite you to
-                learn alongside me as we explore breakthrough startups, cutting-edge research, and practical
-                applications that are shaping tomorrow's world.
+                Whether you're a builder, investor, or simply curious about the future, I invite you to follow along as
+                we explore what's next together.
               </p>
             </CardContent>
           </Card>
