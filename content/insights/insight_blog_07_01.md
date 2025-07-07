@@ -3,7 +3,7 @@ title: "Agentic AI Workflows Are Becoming Real: What's Driving the Shift?"
 excerpt: "From Cursor's orchestration stack to Twitter's AI-driven moderation features, the rise of agentic AI tooling is reshaping startup opportunities."
 date: "2025-07-02"
 readTime: "8 min read"
-category: "#Agentic Systems"
+category: "Agentic Systems"
 ---
 
 The agentic AI space is evolving from theory into implementation. Recent launches like **Cursor’s web-based orchestration platform** signal a turning point: developers are now building tools that let AI agents manage code, integrate APIs, and optimize dev workflows in real-time.

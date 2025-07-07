@@ -3,7 +3,7 @@ title: "The AI-Climate Tension: Can Emissions & Innovation Coexist?"
 excerpt: "Meta’s geothermal partnership and Microsoft's energy usage highlight the rising friction between AI scale and climate goals."
 date: "2025-07-02"
 readTime: "7 min read"
-category: "#Climate Innovation"
+category: "Climate Innovation"
 ---
 
 AI progress is colliding with environmental urgency. In a high-profile sustainability maneuver, **Meta inked a deal to power its AI systems with geothermal energy**. While this is a positive signal, Meta’s own sustainability report reveals a troubling contradiction: **AI workloads are also driving up emissions.**
